@@ -1,0 +1,27 @@
+{
+  "name": "team-7-autocomplete-website",
+  "version": "1.0.0",
+  "description": "team 7 autocomplete website | Nabil - Ahmed",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G11/team-7-autocomplete-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-G11/team-7-autocomplete-website/issues"
+  },
+  "homepage": "https://github.com/GSG-G11/team-7-autocomplete-website#readme",
+  "devDependencies": {
+    "eslint": "^8.9.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "nodemon": "^2.0.15"
+  }
+}
