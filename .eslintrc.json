@@ -11,5 +11,8 @@
         "ecmaVersion": "latest"
     },
     "rules": {
+        "indent" :"off",
+        "no-unused-vars":"off",
+        "no-undef":"off",
     }
 }
