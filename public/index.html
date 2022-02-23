@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Auto Complete Application</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <section class="container">
-            <h2>Auto Complete</h2>
-            <div class="countries-form">
-                <input list="countries" name="country" id="country" autocomplete="off" autofocus="country">
-                <datalist id="countries">
-                </datalist>
-                <button type="submit">Send</button>
-            </div>
-        </section>
-        <section class="country-card">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Complete Application</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="body__auto-complete">
+    <section class="container">
+      <h2 class="title__auto-complete">Auto Complete</h2>
+      <div class="countries-form">
+        <input
+          class="country-input"
+          list="countries"
+          name="country"
+          id="country"
+          autocomplete="off"
+          autofocus="country"
+          required
+          placeholder="Enter Your country Name" />
+        <datalist id="countries"> </datalist>
+        <button class="btn-send" type="submit">Send</button>
+      </div>
+      <p id="text-error" class="text__error hiden">tt</p>
+    </section>
+    <section class="country-details">
+        <div  class="default-svg" id="default-svg">
+            <img src="https://i.top4top.io/p_2245ysaw51.png" alt="image country details">
+        </div>
+    </section>
 
-        </section>
-
-        <script src="js/app.js"></script>
-        <script src="js/fetch.js"></script>
-        <script src="js/dom.js"></script>
-    </body>
+    <script src="js/app.js"></script>
+    <script src="js/fetch.js"></script>
+    <script src="js/dom.js"></script>
+  </body>
 </html>
