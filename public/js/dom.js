@@ -80,7 +80,7 @@ const countryInfoCard = (data) => {
 
 addListener('button', 'click', () => {
   const formInput = querySelector('#country').value;
-  post('../api/country/data', formInput, (data) => {
+  post('/api/country/data', formInput, (data) => {
     const collection = querySelector('.country-details');
     if (data.status === 404) {
       collection.innerHTML = '';
@@ -100,7 +100,7 @@ addListener('button', 'click', () => {
 
 addListener('input', 'input', () => {
   const formInput = querySelector('#country').value;
-  post('../api/country/filtered', formInput, (data) => {
+  post('/api/country/filtered', formInput, (data) => {
     document.querySelectorAll('option').forEach((option) => {
       option.remove();
     });
