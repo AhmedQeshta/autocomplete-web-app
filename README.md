@@ -9,6 +9,7 @@ autocomplete-website is a website to help students find general information abou
 ## 👉🏻 **Links** <span id='links'></span>
 
 -   [Github link](https://github.com/GSG-G11/team-7-autocomplete-website)
+-   [Demo link](https://gsg-country-app.herokuapp.com/)
 
 
 ## 👉🏻 **Our website uses an API:** <span id='API'></span>
