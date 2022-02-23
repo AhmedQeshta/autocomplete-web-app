@@ -5,14 +5,12 @@
         "node": true
     },
     "extends": [
-        "airbnb-base"
+        "airbnb-base", "prettier"
     ],
     "parserOptions": {
         "ecmaVersion": "latest"
     },
+    "plugins": ["prettier"],
     "rules": {
-        "indent" :"off",
-        "no-unused-vars":"off",
-        "no-undef":"off",
     }
 }
