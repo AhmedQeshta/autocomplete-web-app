@@ -15,7 +15,9 @@ const router = (req, res) => {
     fileRead(res, 'index.html');
   } else if (url.includes('css') || url.includes('js')) {
     fileRead(res, url);
-  } else if (url === '/api/country/data' && method === 'POST') {
+  }else if (url === '/favicon.ico') {
+    fileRead(res, url);
+  }  else if (url === '/api/country/data' && method === 'POST') {
     let data = '';
     req.on('data', (chunk) => {
       data += chunk;

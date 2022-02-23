@@ -19,6 +19,7 @@ const fileRead = (response, url) => {
         ".png": "text/png",
         ".json": "application/json",
         ".txt": "text/plain",
+        ".ico": "image/x-icon",
     };
 
     readFile(filePath, "utf8", (err, file) => {
