@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // -------------- fetch method -------------------------
 /*
     to Use it ===> fetch(YourMethod,YourUrl,YourCallback)
@@ -6,10 +7,11 @@
     });
 */
 function fetch (method, url, payload, cb) {
+    // eslint-disable-next-line no-undef
     const xhr = new XMLHttpRequest();
     const payloadString = JSON.stringify(payload);
 
-    xhr.onreadystatechange = function () {
+    xhr.onreadystatechange =  ()=> {
       if (xhr.readyState === 4) {
         if (xhr.status === 200) {
           cb(JSON.parse(xhr.responseText));
@@ -23,6 +25,6 @@ function fetch (method, url, payload, cb) {
     xhr.send(payloadString);
   };
 
-  const get = function (url, cb) { fetch('GET', url, null, cb); }
-  const post = function (url, payload, cb) { fetch('POST', url, payload, cb); }
+  const get =  (url, cb) => { fetch('GET', url, null, cb); }
+  const post =  (url, payload, cb) => { fetch('POST', url, payload, cb); }
   
