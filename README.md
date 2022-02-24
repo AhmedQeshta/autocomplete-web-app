@@ -1,10 +1,20 @@
-# team-7-autocomplete-website
-team 7 autocomplete website
+# Autocompleter website
+
+## Topic Title
+-   [Description](#desc)
+-   [Links](#links)
+-   [API](#API)
+-   [Features](#features)
+-   [Built with](#built)
+-   [User Journey](#Journey)
+-   [User stories](#stories)
+-   [Installing the project locally](#install)
+-   [Team members](#team)
 
 
 ## 👉🏻 **Description** <span id='desc'></span>
 
-autocomplete-website is a website to help students find general information about the country they search for.
+Our site is a site to search for countries and get information about them. So that when you start typing the letters in the search entry, it starts searching in the countries, is visible, and displays them to you in the form of a drop-down list for the country option. Then press the search button to display the country's information (flag, currency, name, population, and geographical location)
 
 ## 👉🏻 **Links** <span id='links'></span>
 
@@ -31,12 +41,15 @@ autocomplete-website is a website to help students find general information abou
 -   CSS → to style the application
 -   JS|DOM Manipulations → To create interaction between the page and the user
 -   use APIs.
+-   node_modules
+-   eslint  → To Use Style Code
 
 ## 👉🏻 **User Journey** <span id='Journey'></span>
 
--   First, the user will interact with the landing page which contains a summary of the website and a button that will transfer the user to the next page (search section)
--   Second, on the search page the user can search for any country, then a recommendation list would appear as he starts typing.
--   Third, after the user chooses a country, it will transfer him to the general info page that contains main information about the selected country, and a button that would show him a list of all universities in the country.
+-   First, the user will interact with the landing page which contains a summary of the website and an input for search 
+-   Second, on the search Section, the user can search for any country, then a recommendation list would appear as he starts typing.
+-   Third, after the user chooses a country, it will appear on the general info section that contains main information about the selected country, and a button that would show him a country location on Google map.
+-   Finally, if the User search for text that does not country should appear text Error.
 
 
 ## 👉🏻 **User stories** <span id='stories'></span>
@@ -49,7 +62,12 @@ autocomplete-website is a website to help students find general information abou
 
 -   `git clone https://github.com/GSG-G11/team-7-autocomplete-website`
 -   `cd team-7-autocomplete-website`
+-   `npm install`
 -   `code .`
+
+***`npm start`*** ==> For run Project
+
+
 
 ## 👉🏻 **Team members** <span id='team'></span>
 
