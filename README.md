@@ -53,5 +53,5 @@ autocomplete-website is a website to help students find general information abou
 
 ## 👉🏻 **Team members** <span id='team'></span>
 
--   [Nabil](https://github.com/nabilramy)
+-   [Nabil AbuShaban](https://github.com/nabilramy)
 -   [Ahmed Qeshta](https://github.com/AhmedQeshta)
