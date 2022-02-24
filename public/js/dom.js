@@ -84,10 +84,10 @@ addListener('button', 'click', () => {
     const collection = querySelector('.country-details');
     if (data.status === 404) {
       collection.innerHTML = '';
-      const div = createElement('div','default-svg',collection);
+      const div = createElement('div', 'default-svg', collection);
       div.id = 'default-svg';
-      const img = createElement('img','',div);
-      img.src='https://i.top4top.io/p_2245ysaw51.png';
+      const img = createElement('img', '', div);
+      img.src = 'https://i.top4top.io/p_2245ysaw51.png';
       querySelector('#text-error').classList.remove('hiden');
       querySelector('#text-error').textContent = data.message;
     } else {
