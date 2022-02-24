@@ -1,10 +1,15 @@
-const { fileRead, handleEndPoint } = require('./handler/publicHandler');
+const {
+  fileRead,
+  handleEndPoint,
+  handleChunk,
+  handleFilter,
+} = require('./handler/publicHandler');
 const countries = require('./countries.json');
 const fetchHandler = require('./handler/fetch');
 
-const router = (req, res) => {
-  const { url } = req;
-  const { method } = req;
+const router = (request, response) => {
+  const { url } = request;
+  const { method } = request;
 
   const contentType = {
     '.json': 'application/json',
@@ -12,44 +17,35 @@ const router = (req, res) => {
   };
 
   if (url === '/') {
-    fileRead(res, 'index.html');
+    fileRead(response, 'index.html');
   } else if (url.includes('css') || url.includes('js')) {
-    fileRead(res, url);
-  }else if (url === '/favicon.ico') {
-    fileRead(res, url);
-  }  else if (url === '/api/country/data' && method === 'POST') {
-    let data = '';
-    req.on('data', (chunk) => {
-      data += chunk;
-    });
-    req.on('end', () => {
+    fileRead(response, url);
+  } else if (url === '/favicon.ico') {
+    fileRead(response, url);
+  } else if (url === '/api/country/data' && method === 'POST') {
+    handleChunk(request, (data) => {
       fetchHandler(
         `https://restcountries.com/v3.1/name/${JSON.stringify(
           JSON.parse(data)
         )}`,
-        res
+        response
       );
     });
   } else if (url === '/api/country/filtered' && method === 'POST') {
     const cloneCountries = JSON.parse(JSON.stringify(Object.keys(countries)));
 
-    let data = '';
-    req.on('data', (chunk) => {
-      data += chunk;
-    });
+    handleChunk(request, (data) => {
+      const filteredArr = handleFilter(cloneCountries, data);
 
-    req.on('end', () => {
-      const filteredArr = cloneCountries.filter((country) => {
-        const countryLowerCase = country.toLowerCase();
-        const dataLowerCase = JSON.parse(data).toLowerCase();
-        return countryLowerCase.startsWith(dataLowerCase);
-      });
-
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify(filteredArr)); // newData
+      handleEndPoint(
+        response,
+        200,
+        JSON.stringify(filteredArr),
+        'application/json'
+      );
     });
   } else {
-    handleEndPoint(res, 404, '404 | Page Not Found', contentType['.txt']);
+    handleEndPoint(response, 404, '404 | Page Not Found', contentType['.txt']);
   }
 };
 
