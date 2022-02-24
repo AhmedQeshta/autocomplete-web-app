@@ -10,7 +10,7 @@ const fetchHandler = (link, response) => {
       });
 
       resp.on('end', () => {
-        response.writeHead(200, { "content-type": "application/json" });
+        response.writeHead(200, { 'content-type': 'application/json' });
 
         response.end(data);
       });
